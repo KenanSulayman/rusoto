@@ -4916,7 +4916,6 @@ impl ListObjectsOutputParser {
         let mut obj = ListObjectsOutput::default();
         loop {
             let current_name = try!(peek_at_name(stack));
-            println!("current_name is {}", current_name);
             if current_name == "Name" {
                 obj.name = try!(BucketNameParser::parse_xml("Name", stack));
                 continue;
